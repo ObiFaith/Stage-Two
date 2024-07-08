@@ -5,8 +5,8 @@ import { Button, Logo } from ".."
 const Footer = () => {
   return (
     <footer className="bg-[#FEFFFF]">
-      <div className="container flex gap-6 flex-wrap justify-between py-10">
-        <div className="">
+      <div className="container flex gap-6 gap-y-9 flex-wrap justify-between py-10">
+        <div>
           <Logo />
           <div className="pt-6">
             <p className="text-green-500 pb-3 text-xl">Join our mailing list</p>

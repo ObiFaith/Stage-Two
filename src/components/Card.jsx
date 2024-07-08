@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { cart, current, wishlist } from "../assets"
 
 const Card = ({img, name, price, available, colors, status}) => {
@@ -16,7 +17,7 @@ const Card = ({img, name, price, available, colors, status}) => {
               <img src={current} alt="current" />
               <p>{available} pieces available</p>
             </div>
-            <img src={cart} alt="add to cart" />
+            <Link to='/cart'><img src={cart} alt="add to cart" /></Link>
           </div>
         </div>
       </div>

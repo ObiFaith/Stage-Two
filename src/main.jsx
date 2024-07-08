@@ -12,8 +12,9 @@ import { Cart, Home, NotFound, Checkout, Layout, Products } from '.'
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
-			<Route path='/' element={<Home />} />
-			<Route index path="/product" element={<Products />} />
+			<Route path='/home' element={<Home />} />
+			<Route index element={<Products />} />
+			<Route path="/product" element={<Products />} />
 			<Route path='/cart' element={<Cart />} />
 			<Route path='/checkout' element={<Checkout />} />
 			<Route path='*' element={<NotFound />} />

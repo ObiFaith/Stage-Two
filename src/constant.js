@@ -2,8 +2,8 @@ import { prod_img_1, prod_img_2, prod_img_3, prod_img_4, prod_img_5, prod_img_6,
   prod_img_10, prod_img_11, prod_img_12, prod_img_13, prod_img_14, prod_img_15, prod_img_16 } from './assets'
 
 export const navLinks = [
-  {name: 'Home', to: '/'},
-  {name: 'Products', to: '/product'},
+  {name: 'Home', to: '/home'},
+  {name: 'Products', to: '/'},
   {name: 'Best Sellers', to: '/sellers'},
   {name: 'Catalog', to: '/catalog'},
   {name: 'Contact Us', to: '/contact'},

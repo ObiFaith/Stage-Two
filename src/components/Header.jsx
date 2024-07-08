@@ -1,5 +1,5 @@
 import { headerIcons, icon_menu, icon_close } from "../assets"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { Logo } from ".."
 import { useState } from "react"
 import { navLinks } from "../constant"
@@ -16,18 +16,18 @@ const Header = () => {
             <NavLink className={({isActive}) => isActive ? 'underline underline-offset-2 hover:text-green-500' : 'hover:underline hover:text-green-500 hover:underline-offset-2'} key={navItem.name} to={navItem.to} >{navItem.name}</NavLink>
           )}
         </nav>
-        <div className="flex gap-1.5 lg:gap-3 items-center">
+        <div className="flex cursor-pointer gap-1.5 lg:gap-3 items-center">
           {headerIcons.map((icon, index) => (
-            <div key={index}>
+            <Link to={icon.includes('cart') ? '/cart' : ''} key={index}>
               <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
-            </div>
+            </Link>
           ))}
           <div onClick={() => setOpen(!isOpen)} className="md:hidden ms-2 transition-all">
             <img src={isOpen ? icon_close : icon_menu} alt="menu icon" />
           </div>
         </div>
       </div>
-      {isOpen && <nav className="flex transition-all flex-col items-center pt-6 gap-3 text-green-400 font-semibold">
+      {isOpen && <nav className="flex cursor-pointer transition-all flex-col items-center pt-6 gap-3 text-green-400 font-semibold">
         {navLinks.map(navItem =>
           <NavLink key={navItem.name} to={navItem.to} >{navItem.name}</NavLink>
         )}

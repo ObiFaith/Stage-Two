@@ -3,7 +3,7 @@ import { hero_img } from "../assets"
 const Hero = () => {
   return (
     <section className="bg-[#BAE2E1] py-5 max-md:py-10">
-      <div className="container flex gap-12 items-center max-md:flex-col justify-between ">
+      <div className="container flex gap-12 items-center max-md:flex-col-reverse justify-between ">
         <div className="max-md:text-center">
           <h1 className="text-red-400 font-bold text-3xl lg:text-4xl pb-2 max-md:pb-4">Make memories with Miva</h1>
           <p className="text-green-800">
