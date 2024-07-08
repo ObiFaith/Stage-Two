@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p {
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+h1, h2, h3, h4, h5, h6 {@apply font-mono font-semibold}
+input {@apply font-openSans placeholder:text-lg outline-none text-green-800}
+
+@layer components {
+  .btn {@apply py-3 px-20 rounded-[2rem] bg-green-400 text-white-400 font-bold}
+  .shadow {@apply drop-shadow-md px-10 shadow-[#187A77]/25}
+}
