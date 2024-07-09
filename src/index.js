@@ -10,9 +10,10 @@ import NotFound from './pages/NotFound'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Category from './sections/Category'
-import BreadCrumb from './components/BreadCrumb'/*  */
+import CartList from './components/CartList'
+import BreadCrumb from './components/BreadCrumb'
 import { Btn, Button } from './components/Buttons'
 
 export { Btn, Cart, Home, Logo, Button, Layout, Footer, Header, Products, NotFound, Checkout,
-  BreadCrumb, Hero, Category, Card
+  BreadCrumb, Hero, Category, Card, CartList
 }

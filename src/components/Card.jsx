@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
-import { cart, current, wishlist } from "../assets"
+import { cart, current, wishlist, new_img } from "../assets"
 
-const Card = ({img, name, price, available, colors, status}) => {
+const Card = ({img, name, price, available, colors, isNew}) => {
   return (
     <div className="border grid gap-6 border-[#BAE2E1] rounded-[32px] p-4">
-      <div className=""><img src={img} alt={img.split('/').pop().replace('.png', '')} /></div>
+      <div className="relative">
+        <img src={img} alt={img.split('/').pop().replace('.png', '')} />
+        {isNew && <img className="absolute -top-2 -left-2" src={new_img} alt='new product'/>}
+      </div>
       <div className="grid gap-1">
         <h1 className="lg:text-xl text-lg text-green-500">${price}</h1>
         <div className="text-red-600">

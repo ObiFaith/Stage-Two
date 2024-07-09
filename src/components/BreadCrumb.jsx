@@ -5,7 +5,7 @@ const BreadCrumb = ({search = false, back = false, name}) => {
     <div className={`container lg:px-24 py-8 ${search ? 'flex justify-between' : ''}`}>
       <div className={back ? "flex gap-10" : ''}>
         {back && <img src={left_arrow} alt="prev" />}
-        <h2 className="lg:text-2xl text-xl text-green-400">{name}</h2>
+        <h2 className="lg:text-2xl md:text-xl text-lg text-green-400">{name}</h2>
       </div>
       {search && <div className="flex lg:min-w-96 border px-5 border-green-400 rounded-2xl">
         <img src={input_search} alt="search" />
