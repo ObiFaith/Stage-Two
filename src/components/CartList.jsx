@@ -21,7 +21,7 @@ const CartList = ({img, name, price, available, colors, isNew, qty}) => {
               </div>
               <ProdColors colors={colors} className='max-lg:hidden' />
             </div>
-            <div className="flex items-center max-md:my-2 gap-x-10 border border-green-600 py-1 px-2.5 rounded-[20px]">
+            <div className="flex items-center max-sm:justify-center max-md:my-2 gap-4 sm:gap-6 lg:gap-x-10 border border-green-600 py-1 px-2.5 rounded-[20px]">
               <div className='cursor-pointer'><img src={minus} alt="sub" /></div>
               <span className='text-lg font-bold text-red-400'>{qty}</span>
               <div className='cursor-pointer'><img src={plus} alt="add" /></div>

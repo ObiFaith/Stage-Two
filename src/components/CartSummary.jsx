@@ -1,8 +1,8 @@
 import { Btn } from "./Buttons"
 
-const CartSummary = ({subTotal = '$4,500.00', total = '$4,050.00', discountAmt = '$450.00'}) => {
+const CartSummary = ({ btn = false, className="justify-end", subTotal = '$4,500.00', total = '$4,050.00', discountAmt = '$450.00'}) => {
   return (
-    <div className="grid justify-end">
+    <div className={`grid ${className}`}>
       <div className="flex gap-20 text-green-600">
         <div className="grid gap-y-3 text-lg lg:text-xl">
           <p>Sub-total</p>
@@ -15,7 +15,7 @@ const CartSummary = ({subTotal = '$4,500.00', total = '$4,050.00', discountAmt =
           <h3>{total}</h3>
         </div>
       </div>
-      <div className="pt-14 text-center"><Btn name='Checkout' to='/checkout' /></div>
+      {btn && <div className="pt-14 text-center"><Btn name='Checkout' to='/checkout' /></div>}
     </div>
   )
 }
