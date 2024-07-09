@@ -1,4 +1,5 @@
 import { current, del, minus, new_img, plus } from '../assets'
+import { ProdColors } from '..'
 
 const CartList = ({img, name, price, available, colors, isNew, qty}) => {
   return (
@@ -18,24 +19,18 @@ const CartList = ({img, name, price, available, colors, isNew, qty}) => {
                   <p>{available} pieces available</p>
                 </div>
               </div>
-              <div className="flex gap-2 items-center max-lg:hidden">
-                {colors.map(color => (
-                  <div style={{backgroundColor: `${color}`}} key={color} className='p-2.5 shadow rounded-full'></div>))}
-              </div>
+              <ProdColors colors={colors} className='max-lg:hidden' />
             </div>
             <div className="flex items-center max-md:my-2 gap-x-10 border border-green-600 py-1 px-2.5 rounded-[20px]">
               <div className='cursor-pointer'><img src={minus} alt="sub" /></div>
-              <span className='text-lg font-bold'>{qty}</span>
+              <span className='text-lg font-bold text-red-400'>{qty}</span>
               <div className='cursor-pointer'><img src={plus} alt="add" /></div>
             </div>
           </div>
           <div className="flex lg:*:ms-20 justify-between lg:justify-around col-span-2 items-center">
             <div className="flex gap-2">
-              <div className="flex lg:hidden gap-2 items-center">
-                {colors.map(color => (
-                  <div style={{backgroundColor: `${color}`}} key={color} className='p-2.5 shadow rounded-full'></div>))}
-              </div>
-              <h3 className=' lg:text-xl text-lg text-green-500'>${price}</h3>
+              <ProdColors colors={colors} className='lg:hidden' />
+              <h3 className='lg:text-xl text-lg text-green-500'>${price}</h3>
             </div>
             <div className="flex justify-between items-center gap-4">
               <h3 className='max-lg:hidden lg:text-xl text-lg text-green-500'>${price * qty}</h3>

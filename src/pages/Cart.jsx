@@ -1,4 +1,4 @@
-import { BreadCrumb, CartList } from '..'
+import { BreadCrumb, CartList, CartSummary, Recommended } from '..'
 import { cartProds } from '../constant'
 
 const Cart = () => {
@@ -20,12 +20,12 @@ const Cart = () => {
         <div className="grid gap-10">
           {cartProds.map(prod => <CartList key={prod.name} {...prod} />)}
         </div>
-        <div className="grid">
-          <div className="flex py-5 gap-3">
-            <input type="checkbox" name="" id="" />
-            <p className='text-xs text-red-400'>Apply discount</p>
-          </div>
+        <div className="flex py-5 gap-3">
+          <input type="checkbox" name="" id="" />
+          <p className='text-sm text-red-400'>Apply discount</p>
         </div>
+        <CartSummary />
+        <Recommended />
       </div>
     </div>
     </>)
