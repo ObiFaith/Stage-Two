@@ -17,11 +17,16 @@ const Header = () => {
           )}
         </nav>
         <div className="flex cursor-pointer gap-1.5 lg:gap-3 items-center">
-          {headerIcons.map((icon, index) => (
-            <Link to={icon.includes('cart') ? '/cart' : ''} key={index}>
-              <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
-            </Link>
-          ))}
+          {headerIcons.map((icon, index) => (<>
+            {!icon.includes('cart') ?
+              <Link to='/' key={index}>
+                <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
+              </Link> :
+              <Link to='/cart' key={index}>
+                <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
+              </Link>
+            }
+          </>))}
           <div onClick={() => setOpen(!isOpen)} className="md:hidden ms-2 transition-all">
             <img src={isOpen ? icon_close : icon_menu} alt="menu icon" />
           </div>
@@ -29,7 +34,7 @@ const Header = () => {
       </div>
       {isOpen && <nav className="flex cursor-pointer transition-all flex-col items-center pt-6 gap-3 text-green-400 font-semibold">
         {navLinks.map(navItem =>
-          <NavLink key={navItem.name} to={navItem.to} >{navItem.name}</NavLink>
+          <NavLink className={({isActive}) => isActive ? 'underline underline-offset-2 hover:text-green-500' : 'hover:underline hover:text-green-500 hover:underline-offset-2'}  key={navItem.name} to={navItem.to} >{navItem.name}</NavLink>
         )}
       </nav>}
     </header>
