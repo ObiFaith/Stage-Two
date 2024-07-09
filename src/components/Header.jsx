@@ -17,16 +17,11 @@ const Header = () => {
           )}
         </nav>
         <div className="flex cursor-pointer gap-1.5 lg:gap-3 items-center">
-          {headerIcons.map((icon, index) => (<>
-            {!icon.includes('cart') ?
-              <Link to='/' key={index}>
-                <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
-              </Link> :
-              <Link to='/cart' key={index}>
-                <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
-              </Link>
-            }
-          </>))}
+          {headerIcons.map((icon, index) => (
+            <Link to={index === 2 ? '/cart' : ''} key={index}>
+              <img src={icon} alt={icon.split('/').pop().replace('.svg', '')}/>
+            </Link>
+         ))}
           <div onClick={() => setOpen(!isOpen)} className="md:hidden ms-2 transition-all">
             <img src={isOpen ? icon_close : icon_menu} alt="menu icon" />
           </div>
