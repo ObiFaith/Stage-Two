@@ -1,4 +1,4 @@
-import ProdColors from "./ProdColors"
+import { ProdColors } from ".."
 
 const CheckoutList = ({img, name, price, colors, isNew, qty}) => {
   return (
