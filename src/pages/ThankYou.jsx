@@ -22,8 +22,8 @@ const ThankYou = () => {
           <div className="grid gap-6">
             <div className=""><img src={gift} alt="thank you" /></div>
             <p>Your order has been confirmed.  We accepted your order and we are getting it ready. A confirmation email has been sent to brannyG@gmail.com. </p>
-            <div className="flex items-center gap-6 justify-between">
-              <div className="text-[#0B3937">
+            <div className="flex max-sm:flex-col sm:items-center gap-8 justify-between">
+              <div className="text-[#0B3937 grid gap-3">
                 <div className="">
                   <h3 className="text-lg">Customer information</h3>
                   <p>Name: Branny Gravlin</p>
